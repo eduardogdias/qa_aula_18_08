@@ -2,15 +2,22 @@ package example;
 
 import org.example.Apdex;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
 public class ApdexTest {
 
+    private Apdex apdex;
+    @BeforeEach
+    public void arrange(){
+        this.apdex = new Apdex();
+    }
+
     @Test
     public void validarApdexExcelente(){
         //arrange
-        Apdex apdex = new Apdex();
+        //Apdex apdex = new Apdex();
         //act
         double score = apdex.calculaApdex(1000, 0, 1000);
         //assert
@@ -20,7 +27,7 @@ public class ApdexTest {
     @Test
     public void validarApdexBom(){
         //arrange
-        Apdex apdex = new Apdex();
+        //Apdex apdex = new Apdex();
         //act
         double score = apdex.calculaApdex(870, 40, 1000);
         //assert
@@ -30,7 +37,7 @@ public class ApdexTest {
     @Test
     public void validarApdexRazoavel(){
         //arrange
-        Apdex apdex = new Apdex();
+        //Apdex apdex = new Apdex();
         //act
         double score = apdex.calculaApdex(770, 60, 1000);
         //assert
@@ -40,7 +47,7 @@ public class ApdexTest {
     @Test
     public void validarApdexRuim(){
         //arrange
-        Apdex apdex = new Apdex();
+        //Apdex apdex = new Apdex();
         //act
         double score = apdex.calculaApdex(590, 0, 1000);
         //assert
@@ -50,7 +57,7 @@ public class ApdexTest {
     @Test
     public void validarApdexInaceitavel(){
         //arrange
-        Apdex apdex = new Apdex();
+        //Apdex apdex = new Apdex();
         //act
         double score = apdex.calculaApdex(230, 460, 1000);
         //assert
